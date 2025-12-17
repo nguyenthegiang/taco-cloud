@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: taco-cloud
+  thymeleaf:
+    cache: false
+  datasource:
+    generate-unique-name: false
+    name: taco-cloud
+    url: jdbc:h2:mem:taco-cloud   # http://localhost:8080/h2-console/

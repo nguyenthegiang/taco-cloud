@@ -1,0 +1,336 @@
+/* Taco image on home page */
+.tacoImg {
+    /*display: block;*/
+    max-width: 240px;
+    width: 40%;
+    height: auto;
+    margin: 1.5rem auto;
+}
+
+/* Big nice buttons on home page */
+.homeLink {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    margin: 0.5rem 0.75rem;
+    background-color: #28a745;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 999px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+    transition: background-color 0.15s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
+}
+
+.homeLink:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.22);
+}
+
+.homeLink:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+/* Ingredient checkboxes on design page */
+.ingredient-group input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+    margin: 0.25rem 0.35rem 0.25rem 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.ingredient-group span {
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+
+.ingredient-group div {
+    padding: 0.1rem 0;
+}
+
+/* Optional: hover effect around checkbox row */
+.ingredient-group div:hover {
+    background-color: #f5f5f5;
+}
+
+/* Base page styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Main title on design page */
+h1 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Grid container for ingredient groups */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Ingredient group cards */
+.ingredient-group {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.75rem 0.9rem;
+    background-color: #fafafa;
+}
+
+/* Headings inside ingredient groups */
+.ingredient-group h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+/* Section for taco name and submit button */
+.tacoNameSection {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Taco name input */
+.tacoNameSection input[type="text"],
+.tacoNameInput {
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    width: 60%;
+    max-width: 260px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Primary submit button */
+.primaryButton,
+button {
+    display: inline-block;
+    margin-top: 0.9rem;
+    padding: 0.6rem 1.6rem;
+    font-size: 1rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+    transition: background-color 0.15s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
+}
+
+.primaryButton:hover,
+button:hover {
+    background-color: #0069d9;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.22);
+}
+
+.primaryButton:active,
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+/* Taco name input */
+.tacoNameInput {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    width: 60%;
+    max-width: 260px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Focus state for taco name input */
+.tacoNameInput:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Placeholder styling (optional) */
+.tacoNameInput::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Add red asterisk to required ingredient group headings */
+.ingredient-group h3::after {
+    content: " *";
+    color: #d10000;
+    font-weight: bold;
+}
+
+/* Small helper text next to labels */
+.helper-text {
+    font-size: 0.85rem;
+    color: #666666;
+    font-weight: normal;
+    margin-left: 0.25rem;
+}
+
+/* Order form page layout */
+.orderPage {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Main title on order page */
+.orderPage h1 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Order page logo */
+.orderLogo {
+    display: block;
+    max-width: 200px;
+    width: 40%;
+    height: auto;
+    margin: 0.5rem auto 1.5rem auto;
+}
+
+/* Section headings on order page */
+.orderPage h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* "Design another taco" link */
+#another {
+    display: inline-block;
+    margin: 0.5rem 0 1rem 0;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#another:hover {
+    text-decoration: underline;
+}
+
+/* List of tacos */
+.orderTacoList {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+.orderTacoList li {
+    margin: 0.15rem 0;
+}
+
+/* Form field layout */
+.orderField {
+    margin-bottom: 0.75rem;
+}
+
+.orderField label {
+    display: inline-block;
+    min-width: 140px;
+    font-weight: 600;
+}
+
+.orderField input[type="text"] {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    max-width: 260px;
+    box-sizing: border-box;
+}
+
+/* Validation errors */
+.validationError {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.8rem;
+    color: #d10000;
+}
+
+/* Submit order button */
+.orderSubmit {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.6rem 1.8rem;
+    font-size: 1rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background-color: #28a745;
+    color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+    transition: background-color 0.15s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
+}
+
+.orderSubmit:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.22);
+}
+
+.orderSubmit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+.orderActions {
+    text-align: right;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.secondaryButton {
+    display: inline-block;
+    padding: 0.45rem 1.2rem;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    border: 1px solid #007bff;
+    background-color: #ffffff;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    transition: background-color 0.15s ease, color 0.15s ease,
+    transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.secondaryButton:hover {
+    background-color: #ffffff; /* keep white */
+    color: #0056b3;            /* darker blue text */
+    border-color: #0056b3;     /* darker blue border */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+}
+
+.secondaryButton:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+/* Heading + button on one line */
+.orderHeaderRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Remove extra top margin so it aligns nicely with the h3 */
+.orderHeaderRow .orderActions {
+    margin-top: 0;
+}
