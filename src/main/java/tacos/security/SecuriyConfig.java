@@ -3,6 +3,7 @@ package tacos.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -56,6 +57,7 @@ public class SecuriyConfig {
                 )
                 .oauth2Login(form -> form.loginPage("/login"))
                 .logout(logout -> logout.logoutSuccessUrl("/"))
+//                .csrf(AbstractHttpConfigurer::disable)    // Disable CSRF protection (not recommended)
                 .build();
     }
 }
