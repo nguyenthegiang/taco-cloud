@@ -2,10 +2,12 @@ package tacos.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 import tacos.data.UserRepository;
 import tacos.model.User;
 
@@ -36,5 +38,22 @@ public class SecuriyConfig {
 
             throw new UsernameNotFoundException("User " + username + " not found");
         };
+    }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/design", "/orders").hasRole("USER")
+                        .requestMatchers("/", "/**").permitAll()
+                )
+                .formLogin(form -> form
+                        .loginPage("/login")
+//                                .loginProcessingUrl("/authenticate")
+//                                .usernameParameter("user")
+//                                .passwordParameter("pwd")
+                        .defaultSuccessUrl("/design", true)
+                )
+                .build();
     }
 }
