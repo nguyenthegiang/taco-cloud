@@ -54,6 +54,8 @@ public class SecuriyConfig {
 //                                .passwordParameter("pwd")
                         .defaultSuccessUrl("/design", true)
                 )
+                .oauth2Login(form -> form.loginPage("/login"))
+                .logout(logout -> logout.logoutSuccessUrl("/"))
                 .build();
     }
 }

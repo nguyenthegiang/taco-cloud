@@ -6,6 +6,10 @@
     <link rel="stylesheet" th:href="@{/styles.css}" />
 </head>
 <body>
+<!--    TODO: add styling & validation error text-->
+<form method="POST" th:action="@{/logout}">
+    <input type="submit" value="Logout"/>
+</form>
 <form method="POST" th:action="@{/orders}" th:object="${tacoOrder}" class="orderPage">
     <h1>Order your taco creations!</h1>
     <img th:src="@{/images/TacoCloud.png}" class="orderLogo"/>

@@ -7,3 +7,14 @@ spring:
     generate-unique-name: false
     name: taco-cloud
     url: jdbc:h2:mem:taco-cloud   # http://localhost:8080/h2-console/
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 1185436986898862  # https://developers.facebook.com/
+            client-secret: fd0f70fccefa58311b3b28ef9937b244
+#            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope:
+              - public_profile
+              - email
