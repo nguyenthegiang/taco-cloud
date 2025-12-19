@@ -3,6 +3,8 @@ package tacos.web;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,4 +44,17 @@ public class OrderController {
 
         return "redirect:/";
     }
+
+//    // Example: use PreAuthorize
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public void deleteAllOrders() {
+//        orderRepo.deleteAll();
+//    }
+
+//    // Example: use PostAuthorize
+//    @PostAuthorize("hasRole('ADMIN') || " +
+//            "returnObject?.user.username == authentication.name")
+//    public TacoOrder getOrder(long id) {
+//        return orderRepo.findById(id).orElse(null);
+//    }
 }

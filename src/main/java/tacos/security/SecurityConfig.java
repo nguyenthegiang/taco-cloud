@@ -2,6 +2,8 @@ package tacos.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,7 +15,9 @@ import tacos.data.UserRepository;
 import tacos.model.User;
 
 @Configuration
-public class SecuriyConfig {
+//@EnableGlobalMethodSecurity(prePostEnabled = true)  // deprecated
+@EnableMethodSecurity // for using @PreAuthorize (Spring Security 6+)
+public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
