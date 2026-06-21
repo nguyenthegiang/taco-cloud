@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: taco-cloud
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: taco-cloud
+
+  template:
+    metadata:
+      labels:
+        app: taco-cloud
+
+    spec:
+      containers:
+        - name: taco-cloud
+
+          image: nguyenthegiang/taco-cloud:v1
+
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 8080
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+
+            initialDelaySeconds: 20
+            periodSeconds: 10
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+
+            initialDelaySeconds: 30
+            periodSeconds: 15
